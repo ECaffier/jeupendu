@@ -12,19 +12,26 @@ let words = [
 // variables mot random
 let wordsRandom = Math.floor(Math.random() * words.length);
 let wordChoice = (wordsRandom, words[wordsRandom]);
-
+let wordChoiceArr = Array.from(wordChoice);
 console.log(wordChoice);
 
+// variable hide wordChoiceArr
 
+
+// Variable HP
+
+let vie = 7;
 
 //variable choix joueur
 
 let playerChoice ="";
+
+
 // Fonctions :
 
 function isViable(){
     do {
-        let playerChoice= prompt("Rentrez une lettre");
+        let playerChoice= prompt("Rentrez une lettre" + "\n" + "\n" + wordChoiceArr);
 
         if (playerChoice.length === 1 && isNaN(playerChoice)) {
             
@@ -44,7 +51,7 @@ let playerChoiceLow = isViable();
 
 
 
-let wordChoiceArr = Array.from(wordChoice);
+
 
 console.log(wordChoiceArr);
 
@@ -52,10 +59,11 @@ function compare(){
     for (oneLetter of wordChoiceArr){
         
         if (wordChoiceArr.includes(playerChoiceLow)){
-            alert("bravo");
+            alert("Bien joué" + "\n\n" + wordChoiceArr);
         }
         else{
-            alert("caca");
+            vie--;
+            alert("NON, il vous reste "  + vie);
         }
     }
 
