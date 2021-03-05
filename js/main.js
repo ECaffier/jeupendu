@@ -15,9 +15,6 @@ let wordChoice = (wordsRandom, words[wordsRandom]);
 let wordChoiceArr = Array.from(wordChoice);
 console.log(wordChoice);
 
-// variable hide wordChoiceArr
-
-
 // Variable HP
 
 let vie = 7;
@@ -26,12 +23,20 @@ let vie = 7;
 
 let playerChoice ="";
 
+// variable underscore
+
+let undsc = "";
+for(i=0; i < wordChoiceArr.length; i++){
+    undsc += "_ "
+}
+
+console.log(undsc);
 
 // Fonctions :
 
 function isViable(){
     do {
-        let playerChoice= prompt("Rentrez une lettre" + "\n" + "\n" + wordChoiceArr);
+        let playerChoice= prompt("Rentrez une lettre" + "\n" + "\n" + undsc);
 
         if (playerChoice.length === 1 && isNaN(playerChoice)) {
             
@@ -51,30 +56,26 @@ let playerChoiceLow = isViable();
 
 
 
-
-
-console.log(wordChoiceArr);
-
 function compare(){
+    
     for (oneLetter of wordChoiceArr){
         
-        if (wordChoiceArr.includes(playerChoiceLow)){
-            alert("Bien joué" + "\n\n" + wordChoiceArr);
-        }
-        else{
-            vie--;
-            alert("NON, il vous reste "  + vie);
-        }
+            if (wordChoiceArr.includes(playerChoiceLow)){
+             alert("Bien joué" + "\n\n" + undsc);
+         }
+            else{
+                vie--;
+                alert("NON, il vous reste "  + vie + "point de vie.");
+            }
+       
     }
-
+    
+    
 };
 
 compare();  
 
 
-// function underScore (){
 
-
-// }
 
 
