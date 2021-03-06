@@ -34,7 +34,7 @@ undscArr = Array.from(undsc);
 console.log(undsc);
 
 // Fonctions :
-
+do {
 function isViable(){
     do {
         let playerChoice= prompt("Rentrez une lettre" + "\n" + "\n" + undsc);
@@ -70,7 +70,7 @@ function compare(){
     };
     undscReplace();
     
-    for (oneLetter of wordChoiceArr){
+    for (let tour =0; tour <1; tour++){
         
             if (wordChoiceArr.includes(playerChoiceLow)){
                 
@@ -88,7 +88,8 @@ function compare(){
 
 compare();  
 
-
+}
+while (vie > 0);
 
 // if playerchoice[i] === wordchoicearr[i] 
 // || if playerhcoice === wordchoicearr[1] etc...
