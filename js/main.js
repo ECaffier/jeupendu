@@ -30,6 +30,7 @@ for(i=0; i < wordChoiceArr.length; i++){
     undsc += "_ "
 }
 
+undscArr = Array.from(undsc);
 console.log(undsc);
 
 // Fonctions :
@@ -55,13 +56,25 @@ function isViable(){
 let playerChoiceLow = isViable();
 
 
-
+// function that compare player choice and word choiced by the computer
 function compare(){
+    // function to replace underscore with correct letter
+    function undscReplace(){
+        if (playerChoiceLow[0] === wordChoiceArr[0]){
+            undscArr[0] = playerChoiceLow[0]
+            console.log("salut");
+        }
+        else {
+            console.log("kk");
+        }
+    };
+    undscReplace();
     
     for (oneLetter of wordChoiceArr){
         
             if (wordChoiceArr.includes(playerChoiceLow)){
-             alert("Bien joué" + "\n\n" + undsc);
+                
+             alert("Bien joué" + "\n\n" + undscArr);
          }
             else{
                 vie--;
@@ -77,5 +90,7 @@ compare();
 
 
 
-
+// if playerchoice[i] === wordchoicearr[i] 
+// || if playerhcoice === wordchoicearr[1] etc...
+// guess[i]
 
