@@ -13,8 +13,11 @@ let words = [
 ];
 // variables mot random
 let wordsRandom = Math.floor(Math.random() * words.length);
+
 let wordChoice = (wordsRandom, words[wordsRandom]);
+
 let wordChoiceArr = Array.from(wordChoice);
+
 console.log(wordChoice);
 
 // Variable HP
@@ -23,7 +26,7 @@ let vie = 7;
 
 //variable choix joueur
 
-let playerChoice ="";
+let playerChoice =[];
 
 // variable underscore
 
@@ -36,7 +39,7 @@ let undscArr = Array.from(undsc);
 
 
 // Fonctions :
-do {
+
 function isViable(){
     do {
         let playerChoice= prompt("Rentrez une lettre" + "\n" + "\n" + undscArr);
@@ -55,7 +58,7 @@ function isViable(){
     while (playerChoice.length !==1);
 
 }
-let playerChoiceLow = isViable();
+
 
 
 
@@ -65,11 +68,11 @@ function undscReplace(){
         for (var i = 0; i < wordChoiceArr.length; i ++) {
             if (playerChoiceLow === wordChoiceArr[i]){
                 undscArr[i] = wordChoiceArr[i]; 
+                
+               
             }
             else {
-
-                console.log("kk");
-            
+                
             }
         
         };
@@ -94,28 +97,37 @@ function compare(){
             else{
                 vie--;
                 alert("NON, il vous reste "  + vie + "point de vie.");
-            }
-       
+            } 
     }
-    
-    
+      
 };
 
-compare();  
 
-}
-while (vie > 0);
-// || undscArr === wordchoicearr.
+while (vie > 0){
+    var playerChoiceLow = isViable();
+    compare();   
+        if (Object.is(undscArr.toString(), wordChoiceArr.toString())){
+            break; 
+        }
+      
+    
+};
+// || undscArr === wordChoiceArr.
 
-
-if (vie === 0){
-    alert("Perdu");
-}
-else{
-    alert("gagné !");
-}
+// if (vie === 0){
+//     alert("Perdu");
+// }
+// else{
+//     alert("Gagné !");
+// }
 
 
 // if playerchoice[i] === wordchoicearr[i] 
 // || if playerhcoice === wordchoicearr[1] etc...
 // guess[i]
+
+
+// faire une variable qui prend le nouveau undscArr
+//ou créer une variable avec chaque lettre ajouté par le user
+
+// ou changer le tableau et string et le .replace();
