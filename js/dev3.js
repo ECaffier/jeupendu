@@ -1,7 +1,11 @@
 //Message de bienvenue
 alert("Bienvenue sur le site du pendu");
 
+//array
 
+let undscArr =[];
+let playerChoiceLow =[];
+let wordChoiceArr =[];
 
 // Variables :
 
@@ -29,7 +33,7 @@ let playerChoice ="";
 
 let undsc = "";
 for(i=0; i < wordChoiceArr.length; i++){
-    undsc += "_"
+    undsc += "_ "
 }
 
 let undscArr = Array.from(undsc);
@@ -39,7 +43,7 @@ let undscArr = Array.from(undsc);
 do {
 function isViable(){
     do {
-        let playerChoice= prompt("Rentrez une lettre" + "\n" + "\n" + undscArr);
+        let playerChoice= prompt("Rentrez une lettre" + "\n" + "\n" + undsc);
 
         if (playerChoice.length === 1 && isNaN(playerChoice)) {
             
@@ -57,26 +61,23 @@ function isViable(){
 }
 let playerChoiceLow = isViable();
 
+let found = playerChoiceLow[i];
+let foundFrom = wordChoiceArr[i];
 
-
+//function underscore replace
 function undscReplace(){
+    
+    if (playerChoiceLow[found] === wordChoiceArr[foundFrom]){
 
-    if (wordChoiceArr.includes(playerChoiceLow)) {
-        for (var i = 0; i < wordChoiceArr.length; i ++) {
-            if (playerChoiceLow === wordChoiceArr[i]){
-                undscArr[i] = wordChoiceArr[i]; 
-            }
-            else {
-
-                console.log("kk");
-            
-            }
-        
-        };
+        undscArr[0] = playerChoiceLow[0];
+        console.log("salut");
     }
-}
-        
-        
+    else {
+        console.log("kk");
+    
+    }
+};
+
 console.log(undscArr);
 
 

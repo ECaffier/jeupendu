@@ -1,6 +1,8 @@
 //Message de bienvenue
 alert("Bienvenue sur le site du pendu");
 
+
+
 // Variables :
 
 let words = [
@@ -27,17 +29,17 @@ let playerChoice ="";
 
 let undsc = "";
 for(i=0; i < wordChoiceArr.length; i++){
-    undsc += "_ "
+    undsc += "_"
 }
 
-undscArr = Array.from(undsc);
-console.log(undsc);
+let undscArr = Array.from(undsc);
+
 
 // Fonctions :
 do {
 function isViable(){
     do {
-        let playerChoice= prompt("Rentrez une lettre" + "\n" + "\n" + undsc);
+        let playerChoice= prompt("Rentrez une lettre" + "\n" + "\n" + undscArr);
 
         if (playerChoice.length === 1 && isNaN(playerChoice)) {
             
@@ -51,23 +53,36 @@ function isViable(){
       
     }
     while (playerChoice.length !==1);
-    
+
 }
 let playerChoiceLow = isViable();
+
+
+
+function undscReplace(){
+
+    if (wordChoiceArr.includes(playerChoiceLow)) {
+        for (var i = 0; i < wordChoiceArr.length; i ++) {
+            if (playerChoiceLow === wordChoiceArr[i]){
+                undscArr[i] = wordChoiceArr[i]; 
+            }
+            else {
+
+                console.log("kk");
+            
+            }
+        
+        };
+    }
+}
+        
+        
+console.log(undscArr);
 
 
 // function that compare player choice and word choiced by the computer
 function compare(){
     // function to replace underscore with correct letter
-    function undscReplace(){
-        if (playerChoiceLow[0] === wordChoiceArr[0]){
-            undscArr[0] = playerChoiceLow[0]
-            console.log("salut");
-        }
-        else {
-            console.log("kk");
-        }
-    };
     undscReplace();
     
     for (let tour =0; tour <1; tour++){
@@ -90,8 +105,17 @@ compare();
 
 }
 while (vie > 0);
+// || undscArr === wordchoicearr.
+
+
+if (vie === 0){
+    alert("Perdu");
+}
+else{
+    alert("gagné !");
+}
+
 
 // if playerchoice[i] === wordchoicearr[i] 
 // || if playerhcoice === wordchoicearr[1] etc...
 // guess[i]
-
