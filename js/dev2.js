@@ -2,17 +2,16 @@
 alert("Bienvenue sur le site du pendu");
 
 
+
 // Variables :
 
-//variable words
 let words = [
     "pizza",
     "concombre",
     "salami",
     "tardigrade"
 ];
-
-// variables random words
+// variables mot random
 let wordsRandom = Math.floor(Math.random() * words.length);
 
 let wordChoice = (wordsRandom, words[wordsRandom]);
@@ -21,11 +20,11 @@ let wordChoiceArr = Array.from(wordChoice);
 
 console.log(wordChoice);
 
-// Variable Health Point
+// Variable HP
 
 let vie = 7;
 
-//variable player choice
+//variable choix joueur
 
 let playerChoice =[];
 
@@ -41,11 +40,9 @@ let undscArr = Array.from(undsc);
 
 // Fonctions :
 
-
-// function to check if the player as enter only 1 letter and not a number,then lowercase his choice.
 function isViable(){
     do {
-        let playerChoice= prompt("Entrez une lettre" + "\n" + "\n" + undscArr);
+        let playerChoice= prompt("Rentrez une lettre" + "\n" + "\n" + undscArr);
 
         if (playerChoice.length === 1 && isNaN(playerChoice)) {
             
@@ -53,7 +50,7 @@ function isViable(){
         }
         else {
             
-            alert("Entrez une seule lettre"); 
+            alert("Rentrez une seule lettre"); 
             
         }
       
@@ -64,7 +61,7 @@ function isViable(){
 
 
 
-//function to replace underscore with the correct letter
+
 function undscReplace(){
 
     if (wordChoiceArr.includes(playerChoiceLow)) {
@@ -88,35 +85,49 @@ console.log(undscArr);
 
 // function that compare player choice and word choiced by the computer
 function compare(){
-    // function to replace underscore with the correct letter
+    // function to replace underscore with correct letter
     undscReplace();
     
     for (let tour =0; tour <1; tour++){
         
             if (wordChoiceArr.includes(playerChoiceLow)){
                 
-             alert("Bien joué !" + "\n\n" + undscArr);
+             alert("Bien joué" + "\n\n" + undscArr);
          }
             else{
                 vie--;
-                alert("Raté, il vous reste "  + vie + " point de vie.");
+                alert("NON, il vous reste "  + vie + "point de vie.");
             } 
     }
       
 };
 
-// while loop to play the game, call the function etc ...
 
 while (vie > 0){
     var playerChoiceLow = isViable();
-    compare();
-        if (vie === 0){
-             alert("Dommage, vous n'avez pas trouvé le mot " + wordChoice);
-        }   
+    compare();   
         if (Object.is(undscArr.toString(), wordChoiceArr.toString())){
-            alert("Bravo, vous avez trouvé le mot " + wordChoice);
             break; 
         }
       
     
 };
+// || undscArr === wordChoiceArr.
+
+// if (vie === 0){
+//     alert("Perdu");
+// }
+// else{
+//     alert("Gagné !");
+// }
+
+
+// if playerchoice[i] === wordchoicearr[i] 
+// || if playerhcoice === wordchoicearr[1] etc...
+// guess[i]
+
+
+// faire une variable qui prend le nouveau undscArr
+//ou créer une variable avec chaque lettre ajouté par le user
+
+// ou changer le tableau et string et le .replace();
