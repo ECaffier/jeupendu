@@ -105,8 +105,12 @@ function compare(){
 
 while (vie > 0){
     var playerChoiceLow = isViable();
-    compare();   
+    compare();
+        if (vie === 0){
+             alert("Perdu");
+        }   
         if (Object.is(undscArr.toString(), wordChoiceArr.toString())){
+            alert("Gagné !");
             break; 
         }
       
