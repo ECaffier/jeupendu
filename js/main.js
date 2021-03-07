@@ -42,7 +42,7 @@ let undscArr = Array.from(undsc);
 
 function isViable(){
     do {
-        let playerChoice= prompt("Rentrez une lettre" + "\n" + "\n" + undscArr);
+        let playerChoice= prompt("Entrez une lettre" + "\n" + "\n" + undscArr);
 
         if (playerChoice.length === 1 && isNaN(playerChoice)) {
             
@@ -50,7 +50,7 @@ function isViable(){
         }
         else {
             
-            alert("Rentrez une seule lettre"); 
+            alert("Entrez une seule lettre"); 
             
         }
       
@@ -92,11 +92,11 @@ function compare(){
         
             if (wordChoiceArr.includes(playerChoiceLow)){
                 
-             alert("Bien joué" + "\n\n" + undscArr);
+             alert("Bien joué !" + "\n\n" + undscArr);
          }
             else{
                 vie--;
-                alert("NON, il vous reste "  + vie + "point de vie.");
+                alert("Raté, il vous reste "  + vie + " point de vie.");
             } 
     }
       
